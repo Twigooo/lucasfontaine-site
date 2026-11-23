@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AuroraText } from '../components/AuroraText.tsx';
+import ScrollAi from '../components/ScrollAi.tsx';
+import LocalTerminal from '../components/LocalTerminal.tsx';
+
+const piliers = [
+  {
+    numero: '01',
+    titre: 'Confidentialité absolue',
+    sousTitre: 'Zéro fuite vers des serveurs tiers',
+    description:
+      'Contrairement à ChatGPT ou Copilot, aucune requête ni aucun document ne transite par Internet. Vos devis, bilans, plans et savoir-faire restent physiquement dans vos locaux.',
+  },
+  {
+    numero: '02',
+    titre: 'Recherche documentaire sourcée',
+    sousTitre: 'Vos PDF, procédures et catalogues',
+    description:
+      'L’assistant interroge votre base documentaire interne en langage naturel et cite systématiquement le fichier et la page exacte d’où provient la réponse, sans inventer.',
+  },
+  {
+    numero: '03',
+    titre: 'Rédaction & assistance métier',
+    sousTitre: 'E-mails, synthèses et traductions',
+    description:
+      'Préparation de réponses clients, traduction technique, correction et mise en forme de comptes-rendus à partir de vos propres trames d’entreprise.',
+  },
+  {
+    numero: '04',
+    titre: 'Aucun abonnement par utilisateur',
+    sousTitre: 'Investissement maîtrisé',
+    description:
+      'Une fois déployé sur un poste dédié ou un serveur interne de l’entreprise, toute votre équipe peut l’utiliser librement sans coût mensuel par licence.',
+  },
+];
+---
+
+<Layout title="Assistant IA 100 % Local — Lucas Fontaine">
+  <main class="max-w-7xl mx-auto px-6">
+    <header class="pt-36 pb-24 md:pt-48 md:pb-32">
+      <h1>
+        <span class="block font-tall text-[10.8vw] sm:text-7xl md:text-[6.2rem] lg:text-[7.8rem] uppercase tracking-normal text-ink leading-[0.92] whitespace-nowrap">
+          Votre IA d'entreprise
+        </span>
+        <span class="block font-serif italic font-medium lowercase text-emerald text-3xl sm:text-5xl md:text-[3.6rem] lg:text-[4.2rem] leading-[1.1] mt-5">
+          <AuroraText>100 % hors-ligne.</AuroraText>
+        </span>
+      </h1>
+
+      <!-- Grille 2 colonnes : texte explicatif à gauche, terminal à droite -->
+      <div class="mt-28 md:mt-36 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <p class="text-lg md:text-xl text-ink/80 leading-relaxed">
+            Les intelligences artificielles publiques envoient vos documents sur des serveurs externes. Je déploie un assistant directement sur votre matériel interne : vos équipes gagnent du temps sur vos dossiers sensibles, sans aucun abonnement par poste.
+          </p>
+          <p class="font-serif italic text-base text-emerald">
+            Ci-contre, une interrogation réelle sur une base documentaire technique, sans aucune connexion Internet.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <LocalTerminal client:visible />
+        </div>
+      </div>
+    </header>
+  </main>
+
+  <!-- 2. Ton animation ScrollAi replacée ici -->
+  <div class="my-12 md:my-20">
+    <ScrollAi client:visible />
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6">
+    <!-- 3. Liste éditoriale numérotée (sans lignes ni boîtes génériques) -->
+    <section class="py-12 md:py-20">
+      <div class="divide-y divide-emerald/20">
+        {piliers.map((item) => (
+          <article class="py-16 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-baseline">
+            <div class="md:col-span-2">
+              <span class="font-serif italic text-2xl md:text-3xl text-emerald">
+                {item.numero}.
+              </span>
+            </div>
+
+            <div class="md:col-span-4">
+              <h2 class="font-display text-2xl md:text-3xl font-black uppercase tracking-tight text-ink">
+                {item.titre}<span class="text-emerald">.</span>
+              </h2>
+              <p class="font-serif italic text-sm text-emerald mt-2">
+                {item.sousTitre}
+              </p>
+            </div>
+
+            <div class="md:col-span-6">
+              <p class="text-base md:text-lg text-ink/80 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+<section class="py-24 md:py-32 border-t border-ink/10">
+  <h2 class="font-tall text-5xl sm:text-6xl md:text-7xl uppercase tracking-normal text-ink leading-[0.95] mb-16 md:mb-20">
+    Déploiement en 3 étapes
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
+    <div class="md:pr-10">
+      <span class="font-serif italic text-2xl text-emerald block mb-3">01.</span>
+      <h3 class="font-tall text-3xl uppercase text-ink tracking-normal mb-4">
+        Audit &amp; Dimensionnement
+      </h3>
+      <p class="text-base text-ink/80 leading-relaxed">
+        Analyse de vos flux documentaires (PDF, procédures, catalogues) et recommandation du matériel adapté (serveur interne existant ou station dédiée), en coordination avec votre prestataire informatique.
+      </p>
+    </div>
+
+    <div class="md:border-x md:border-ink/15 md:px-10">
+      <span class="font-serif italic text-2xl text-emerald block mb-3">02.</span>
+      <h3 class="font-tall text-3xl uppercase text-ink tracking-normal mb-4">
+        Installation 100 % locale
+      </h3>
+      <p class="text-base text-ink/80 leading-relaxed">
+        Déploiement de la stack logicielle complète (modèle de langage local, base vectorielle et interface web sécurisée) directement sur votre machine, sans aucune connexion externe.
+      </p>
+    </div>
+
+    <div class="md:pl-10">
+      <span class="font-serif italic text-2xl text-emerald block mb-3">03.</span>
+      <h3 class="font-tall text-3xl uppercase text-ink tracking-normal mb-4">
+        Indexation &amp; Prise en main
+      </h3>
+      <p class="text-base text-ink/80 leading-relaxed">
+        Chargement de votre base documentaire interne, paramétrage de vos trames métier et formation de vos équipes référentes.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- 4. Bloc audit & démonstration -->
+    <section class="py-24 md:py-36">
+      <div class="bg-emerald text-ivory rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div>
+          <p class="font-display text-4xl md:text-5xl font-black mt-2">
+            Déploiement sur devis <br> (À partir de 1 900 €)
+          </p>
+            <p class="text-sm md:text-base text-ivory/85 mt-4 max-w-xl leading-relaxed">
+               Socle assistant documentaire clé en main • Options rédaction métier, comptes rendus et maintenance sur devis.
+            </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2.5 shrink-0">
+          <a
+            href="mailto:contact@lucasfontaine.fr?subject=D%C3%A9monstration%20IA%20Locale"
+            class="bg-ivory text-ink hover:bg-ivory-light font-semibold px-8 py-4 rounded-lg transition-colors"
+          >
+            Planifier une démonstration
+          </a>
+          <span class="text-xs text-ivory/75">Réponse sous 24h • Démonstration concrète sur vos fichiers</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AuroraText } from '../components/AuroraText.tsx';
+
+const engagements = [
+  {
+    numero: '01',
+    titre: 'Design sur mesure',
+    sousTitre: 'Identité & crédibilité locale',
+    description:
+      'Aucune maquette générique : une direction artistique calée sur votre métier, la mise en valeur de vos vraies réalisations et l’intégration de vos avis Google.',
+  },
+  {
+    numero: '02',
+    titre: 'Vitesse & Mobile-First',
+    sousTitre: 'Référencement Google Maps / SEO',
+    description:
+      'Architecture moderne ultra-légère : affichage instantané sur smartphone (là où 70 % de vos prospects vous cherchent) et structure optimisée pour ressortir sur votre secteur.',
+  },
+  {
+    numero: '03',
+    titre: 'Mise en ligne clé en main',
+    sousTitre: 'Nom de domaine, HTTPS & contact direct',
+    description:
+      'Je configure votre nom de domaine, le certificat de sécurité HTTPS et les accès directs (appel en un clic sur mobile, e-mail prérempli). Votre site est hébergé sur une infrastructure moderne haute disponibilité, sans serveur à maintenir ni frais d’hébergement mensuels.',
+  },
+  {
+    numero: '04',
+    titre: '100 % propriétaire',
+    sousTitre: 'Zéro abonnement caché',
+    description:
+      'Contrairement aux agences qui louent un site avec engagement sur 48 mois, vous êtes seul propriétaire de votre nom de domaine et de l’intégralité du code source. Votre seul coût récurrent reste le renouvellement annuel de votre nom de domaine (environ 12 €/an).',
+  },
+];
+---
+
+<Layout title="Site Web Dynamique — Lucas Fontaine">
+  <main class="max-w-6xl mx-auto px-6">
+    <!-- 1. Hero très aéré, cohérent avec la police Anton de l'accueil -->
+    <header class="pt-28 pb-24 md:pt-36 md:pb-32">
+      <h1>
+        <span class="block font-tall text-[11vw] sm:text-7xl md:text-[6.2rem] lg:text-[7.5rem] uppercase tracking-normal text-ink leading-[0.92] whitespace-nowrap">
+          Un site web rapide
+        </span>
+        <span class="block font-serif italic font-medium lowercase text-emerald text-3xl sm:text-5xl md:text-[3.6rem] lg:text-[4.2rem] leading-[1.1] mt-4">
+          <AuroraText>qui inspire confiance.</AuroraText>
+        </span>
+      </h1>
+
+      <p class="mt-16 md:mt-20 text-lg md:text-xl text-ink/80 max-w-3xl leading-relaxed">
+        Beaucoup d'artisans, cabinets et PME locales perdent des chantiers ou des clients parce que leur site actuel est lent, illisible sur téléphone ou inexistant. Je conçois votre vitrine sur mesure en deux semaines, sans jargon technique.
+      </p>
+    </header>
+
+    <!-- 2. Liste éditoriale numérotée (remplace les 4 encarts IA) -->
+    <section class="py-12 md:py-20">
+      <div class="divide-y divide-emerald/20">
+        {engagements.map((item) => (
+          <article class="py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-baseline">
+            {/* Numéro éditorial */}
+            <div class="md:col-span-2">
+              <span class="font-serif italic text-2xl md:text-3xl text-emerald">
+                {item.numero}.
+              </span>
+            </div>
+
+            {/* Titre fort */}
+            <div class="md:col-span-4">
+              <h2 class="font-display text-2xl md:text-3xl font-black uppercase tracking-tight text-ink">
+                {item.titre}<span class="text-emerald">.</span>
+              </h2>
+              <p class="font-serif italic text-sm text-emerald mt-1">
+                {item.sousTitre}
+              </p>
+            </div>
+
+            {/* Explication aérée */}
+            <div class="md:col-span-6">
+              <p class="text-base md:text-lg text-ink/80 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- 3. Bloc tarif & passage à l'action -->
+    <section class="py-20 md:py-28">
+      <div class="bg-emerald text-ivory rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div>
+          <span class="font-serif italic text-ivory/80 text-xl">Forfait lancement</span>
+          <p class="font-display text-4xl md:text-5xl font-black mt-2">
+          à partir de 500 € 
+          </p>
+          <p class="text-sm md:text-base text-ivory/80 mt-3 max-w-md leading-relaxed">
+            Site vitrine complet (1 à 4 pages : Accueil, Prestations, Réalisations, Contact) conçu sur mesure et livré sous 2 semaines.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-2.5 shrink-0">
+          <a
+            href="mailto:contact@lucasfontaine.fr?subject=Aper%C3%A7u%20gratuit%20-%20Site%20Web"
+            class="bg-ivory text-ink hover:bg-ivory-light font-semibold px-8 py-4 rounded-lg transition-colors"
+          >
+            Demander une maquette gratuite
+          </a>
+          <span class="text-xs text-ivory/75">Aperçu de votre page d'accueil sous 48h • Sans engagement</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

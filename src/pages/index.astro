@@ -1,16 +1,141 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { AuroraText } from '../components/AuroraText.tsx';
+import VelocityBanner from '../components/VelocityBanner.tsx';
+import { BorderBeam } from '../components/BorderBeam.tsx';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Lucas Fontaine — IA Locale & Développement Web">
+  <!-- 1. Hero : Conteneur élargi (max-w-7xl) pour maximiser "DES OUTILS NUMÉRIQUES" -->
+  <header class="min-h-[88vh] flex flex-col justify-center max-w-7xl mx-auto px-6 py-28 md:py-36">
+    <h1>
+      <span class="block font-tall text-[11.2vw] lg:text-[8.6rem] xl:text-[9.6rem] uppercase tracking-normal text-ink leading-[0.9] whitespace-nowrap">
+        Des outils numériques
+      </span>
+
+      <span class="block font-serif italic font-medium lowercase text-emerald text-3xl sm:text-5xl md:text-[3.8rem] lg:text-[4.4rem] leading-[1.1] mt-4">
+        <AuroraText>sur mesure et confidentiels.</AuroraText>
+      </span>
+    </h1>
+
+    <p class="mt-16 md:mt-20 w-full text-justify text-lg md:text-xl text-ink/80 leading-relaxed">
+      J'accompagne les PME, cabinets et artisans de la région lyonnaise dans la conception de sites web rapides et sur mesure, ainsi que dans le déploiement d'assistants IA 100 % locaux. L'objectif est simple : moderniser votre image en ligne, automatiser vos tâches chronophages et interroger vos documents internes au quotidien, sans jamais exposer vos données confidentielles sur Internet.
+    </p>
+  </header>
+
+  <!-- 2. Ruban animé -->
+  <div class="my-24 md:my-36">
+    <VelocityBanner client:visible />
+  </div>
+
+<!-- 3. Les deux offres : en clair avec BorderBeam et points signature -->
+  <section id="offres" class="max-w-6xl mx-auto px-6 py-32 md:py-44">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+      <div>
+        <h2 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight text-ink">
+          Mes accompagnements<span class="text-emerald">.</span>
+        </h2>
+      </div>
+      <p class="text-sm text-ink/70 max-w-xs">
+        Cliquez sur une offre pour consulter le détail technique, les livrables et les tarifs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Offre 01 : Web Dynamique -->
+      <a
+        href="/offre-web"
+        class="group relative flex flex-col justify-between bg-ivory-dark/25 border border-emerald/25 rounded-2xl p-9 md:p-12 overflow-hidden transition-colors duration-300 hover:bg-ivory-dark/45"
+      >
+        <BorderBeam duration={8} colorFrom="#2a5c4f" colorTo="#4e9a86" />
+
+        <div>
+          <div class="flex items-baseline justify-between gap-4 pb-6 border-b border-emerald/15">
+            <span class="font-serif italic text-lg text-emerald">01. Visibilité &amp; Image</span>
+            <span class="font-display font-bold text-sm uppercase tracking-wider text-ink whitespace-nowrap">
+              Dès 500 €
+            </span>
+          </div>
+
+          <h3 class="mt-8 font-display text-3xl md:text-4xl font-black uppercase tracking-tight text-ink">
+            Site Web<br />Dynamique<span class="text-emerald">.</span>
+          </h3>
+
+          <p class="mt-5 text-ink/80 leading-relaxed">
+            Conception sur mesure d'une vitrine rapide, pensée pour le mobile et le référencement local, sans abonnement mensuel caché.
+          </p>
+        </div>
+
+        <div class="mt-12 flex items-center justify-between font-semibold text-emerald">
+          <span>Explorer l'offre Web</span>
+          <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+        </div>
+      </a>
+
+      <!-- Offre 02 : IA Locale -->
+      <a
+        href="/offre-ia"
+        class="group relative flex flex-col justify-between bg-ivory-dark/25 border border-emerald/25 rounded-2xl p-9 md:p-12 overflow-hidden transition-colors duration-300 hover:bg-ivory-dark/45"
+      >
+        <BorderBeam duration={8} delay={4} colorFrom="#2a5c4f" colorTo="#4e9a86" />
+
+        <div>
+          <div class="flex items-baseline justify-between gap-4 pb-6 border-b border-emerald/15">
+            <span class="font-serif italic text-lg text-emerald">02. Souveraineté &amp; Gain de temps</span>
+            <span class="font-display font-bold text-sm uppercase tracking-wider text-ink whitespace-nowrap">
+              Sur devis
+            </span>
+          </div>
+
+          <h3 class="mt-8 font-display text-3xl md:text-4xl font-black uppercase tracking-tight text-ink">
+            Assistant IA<br />100 % Local<span class="text-emerald">.</span>
+          </h3>
+
+          <p class="mt-5 text-ink/80 leading-relaxed">
+            Installation sur votre propre matériel d'une intelligence artificielle capable d'exploiter vos PDF, devis et procédures hors-ligne.
+          </p>
+        </div>
+
+        <div class="mt-12 flex items-center justify-between font-semibold text-emerald">
+          <span>Explorer l'offre IA</span>
+          <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. Footer pleine largeur : collé aux bords gauche et droit de l'écran -->
+  <footer id="contact" class="bg-emerald text-ivory py-12 md:py-14 mt-20">
+    <div class="w-full px-6 md:px-14 flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <div>
+        <h2 class="font-display text-3xl md:text-4xl font-black uppercase tracking-tight leading-none">
+          Parlons de votre projet.
+        </h2>
+        <p class="mt-3 text-sm md:text-base text-ivory/80 max-w-lg leading-relaxed">
+          Basé à Collonges-au-Mont-d'Or, je me déplace dans toute la métropole lyonnaise pour étudier votre besoin autour d'un café ou d'un appel de 15 minutes.
+        </p>
+      </div>
+
+      <div class="flex flex-col items-center gap-2.5 shrink-0">
+        <a
+          href="mailto:contact@lucasfontaine.fr"
+          class="bg-ivory text-ink hover:bg-ivory-light font-semibold px-7 py-3.5 rounded-lg text-center transition-colors"
+        >
+          contact@lucasfontaine.fr
+        </a>
+        <div class="flex items-center justify-center gap-3 text-xs text-ivory/75">
+          <span>Réponse sous 24h</span>
+          <span>•</span>
+          <a
+            href="https://www.linkedin.com/in/lucas-fontaine-36026327b"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:text-ivory transition-colors"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

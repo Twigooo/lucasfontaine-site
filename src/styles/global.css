@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette Emerald & Ivory */
+  --color-ivory: #ede3d1;
+  --color-ivory-light: #f7f3eb;
+  --color-ivory-dark: #dfd1b8;
+  --color-emerald: #2a5c4f;
+  --color-emerald-dark: #1d4238;
+  --color-emerald-light: #4e9a86;
+  --color-ink: #142420;
+
+  /* Typographies */
+  --font-tall: "Anton", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Lora", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* Animation Aurora Text */
+  --animate-aurora: aurora 8s ease-in-out infinite alternate;
+
+  @keyframes aurora {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+/* Animation Border Beam fiable sur tous les navigateurs */
+  --animate-beam-spin: beam-spin 6s linear infinite;
+
+  @keyframes beam-spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+
+}
+
+html {
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  scroll-snap-type: y proximity;
+}
